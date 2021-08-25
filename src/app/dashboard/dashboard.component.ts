@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PortfolioService } from '../../services/portfolio.service';
+/*import { PortfolioService } from */
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  reportNetworth:number = 5;
+
+  constructor(private portfolioService: PortfolioService) { }
 
   ngOnInit(): void {
+    this.getNetworthServiceCall();
+  }
+
+  getNetworthServiceCall() {
+    this.portfolioService.getNetworth().subscribe((data:any) => {
+      this.reportNetworth = data;
+    })
   }
 
 }

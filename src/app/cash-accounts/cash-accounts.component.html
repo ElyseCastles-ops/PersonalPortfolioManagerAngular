@@ -1,8 +1,11 @@
 <section>
   <h4>Cash (total)</h4>
   <ul>
-    <li *ngFor="let account of accounts">
+    <li *ngFor="let account of reportAccounts">
       {{account.name}} {{account.balance | currency}}
+      <br />
+      {{account.description}}
+
     </li>
   </ul>
 </section>

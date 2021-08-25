@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PortfolioService } from '../../services/portfolio.service';
 
 @Component({
   selector: 'app-investment-accounts',
@@ -7,14 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvestmentAccountsComponent implements OnInit {
 
-  accounts = [
-    { name: 'test1', balance: 123 },
-    { name: 'test2', balance: 456 }
+  reportAccounts = [
+    { id: 1, name: '', balance: 1, type: '', description: '' }
   ]
 
-  constructor() { }
+  constructor(private PortfolioService: PortfolioService) { }
 
   ngOnInit(): void {
+    this.makeAllAccountsServiceCall();
   }
 
+  makeAllAccountsServiceCall() {
+    this.PortfolioService.getAllInvestmentAccounts().subscribe((data: any) => {
+      this.reportAccounts = data;
+    })
+  }
 }

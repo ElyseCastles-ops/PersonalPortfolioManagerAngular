@@ -14,6 +14,9 @@ import { GainersLosersComponent } from './gainers-losers/gainers-losers.componen
 import { AccountInfoComponent } from './account-info/account-info.component';
 import { CashDetailsComponent } from './cash-details/cash-details.component';
 import { InvestmentDetailsComponent } from './investment-details/investment-details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { InvestmentDetailsComponent } from './investment-details/investment-deta
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

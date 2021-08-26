@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AccountInfoComponent } from './account-info/account-info.component';
 import { CashDetailsComponent } from './modules/cash-details/cash-details.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
+import { InvestmentDetailsComponent } from './investment-details/investment-details.component';
 import { GainersLosersComponent } from './gainers-losers/gainers-losers.component';
 import { InvestmentInsightsComponent } from './investment-insights/investment-insights.component';
 import { DefaultComponent } from './layouts/default/default.component';

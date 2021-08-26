@@ -35,4 +35,7 @@ export class PortfolioService {
   getAccountHoldings(params = {account_id: 1}) {
     return this.http.get(`http://personalportfoliomanager-personalportfoliomanager.namdevops17.conygre.com/holdings/accountid/${params.account_id}`)
   }
+  getAccount(params = { id: 1 }) {
+    return this.http.get(`http://personalportfoliomanager-personalportfoliomanager.namdevops17.conygre.com/accounts/${params.id}`)
+  }
 }

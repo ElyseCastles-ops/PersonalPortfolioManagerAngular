@@ -13,6 +13,7 @@ export class CashDetailsComponent implements OnInit {
 
   @Input() displayId:any = 0;
 
+  reportedAccount = { id: 8, name: '', type: '', description: '', balance: 8 };
   reportedTransactions = [{ id: 8, account_id: 8, name: '', amount: 8, date: '' }];
 
   constructor(private portfolioService: PortfolioService, private router: Router, private route: ActivatedRoute ) { }
@@ -27,12 +28,10 @@ export class CashDetailsComponent implements OnInit {
 
   }
 
-  // ngOnChanges(): void {
-  //   this.displayId = this.route.snapshot.paramMap.get('id')!;
-  //   this.updateDisplayId()
-  // }
-
   updateDisplayId() {
+    this.portfolioService.getAccount({ id: this.displayId }).subscribe((data: any) => {
+      this.reportedAccount = data;
+    })
     this.portfolioService.getAccountTransactions({ category: 'cashtransactions', account_id: this.displayId }).subscribe((data:any) => {
       this.reportedTransactions = data;
     })

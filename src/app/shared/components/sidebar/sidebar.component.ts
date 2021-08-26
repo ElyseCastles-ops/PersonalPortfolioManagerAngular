@@ -9,11 +9,16 @@ import { PortfolioService } from '../../services/portfolio.service';
 })
 export class SidebarComponent implements OnInit {
 
+  reportCashTotal: number = 8;
+  reportInvestmentTotal: number = 8;
+
   constructor(private portfolioService:PortfolioService) { }
 
 
   ngOnInit(): void {
     this.getNetworthServiceCall();
+    this.makeTotalCashValueServiceCall();
+    this.makeTotalInvestmentValueServiceCall();
   }
 
   accountDisplayId:number = 8;
@@ -23,6 +28,17 @@ export class SidebarComponent implements OnInit {
   toggleCashVal:number = 0;
   toggleInvestmentVal:number = 0;
 
+
+  makeTotalCashValueServiceCall() {
+    this.portfolioService.getTotalCashAccountsValue().subscribe((data: any) => {
+      this.reportCashTotal = data
+    })
+  }
+  makeTotalInvestmentValueServiceCall() {
+    this.portfolioService.getTotalInvestmentAccountsValue().subscribe((data: any) => {
+      this.reportInvestmentTotal = data
+    })
+  }
 
 
   getNetworthServiceCall() {

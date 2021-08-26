@@ -1,1 +1,12 @@
-<p>cash-details works!</p>
+<section>
+  <p>{{displayId}}</p>
+
+  <ul *ngIf="reportedTransactions!=[]">
+    <li *ngFor="let transaction of reportedTransactions">
+      <!--<app-cash-transaction></app-cash-transaction>-->
+      {{transaction.name}}
+      {{transaction.amount}}
+      {{transaction.date | date}}
+    </li>
+  </ul>
+</section>

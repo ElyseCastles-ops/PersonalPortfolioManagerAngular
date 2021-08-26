@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { PortfolioService } from '../../services/portfolio.service';
 
 @Component({
@@ -12,10 +12,22 @@ export class InvestmentAccountsComponent implements OnInit {
     { id: 1, name: '', balance: 1, type: '', description: '' }
   ]
 
+  reportTotal: number = 8;
+
+  @Output() getInvestmentAccount: EventEmitter<number> = new EventEmitter();
+  @Output() getDetails: EventEmitter<number> = new EventEmitter();
+
   constructor(private PortfolioService: PortfolioService) { }
 
   ngOnInit(): void {
+    this.makeTotalValueServiceCall();
     this.makeAllAccountsServiceCall();
+  }
+
+  makeTotalValueServiceCall() {
+    this.PortfolioService.getTotalInvestmentAccountsValue().subscribe((data:any) => {
+      this.reportTotal = data
+    })
   }
 
   makeAllAccountsServiceCall() {
@@ -23,4 +35,10 @@ export class InvestmentAccountsComponent implements OnInit {
       this.reportAccounts = data;
     })
   }
+
+  getAccountDetails(account_id: number) {
+    this.getDetails.emit(account_id);
+    this.getInvestmentAccount.emit();
+  }
+
 }

@@ -14,6 +14,7 @@ import { GainersLosersComponent } from './gainers-losers/gainers-losers.componen
 import { AccountInfoComponent } from './account-info/account-info.component';
 import { CashDetailsComponent } from './cash-details/cash-details.component';
 import { InvestmentDetailsComponent } from './investment-details/investment-details.component';
+import { CashTransactionComponent } from './cash-transaction/cash-transaction.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { InvestmentDetailsComponent } from './investment-details/investment-deta
     GainersLosersComponent,
     AccountInfoComponent,
     CashDetailsComponent,
-    InvestmentDetailsComponent
+    InvestmentDetailsComponent,
+    CashTransactionComponent
   ],
   imports: [
     BrowserModule,

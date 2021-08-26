@@ -19,4 +19,20 @@ export class PortfolioService {
   getAllInvestmentAccounts() {
     return this.http.get(`http://personalportfoliomanager-personalportfoliomanager.namdevops17.conygre.com/accounts/investment`)
   }
+
+  getTotalInvestmentAccountsValue() {
+    return this.http.get(`http://personalportfoliomanager-personalportfoliomanager.namdevops17.conygre.com/accounts/investment/total`)
+  }
+
+  getTotalCashAccountsValue() {
+    return this.http.get(`http://personalportfoliomanager-personalportfoliomanager.namdevops17.conygre.com/accounts/cash/total`)
+  }
+
+  getAccountTransactions(params = { category: 'cashtransactions', account_id: 1 }) {
+    return this.http.get(`http://personalportfoliomanager-personalportfoliomanager.namdevops17.conygre.com/${params.category}/accountid/${params.account_id}`)
+  }
+
+  getAccountHoldings(params = {account_id: 1}) {
+    return this.http.get(`http://personalportfoliomanager-personalportfoliomanager.namdevops17.conygre.com/holdings/accountid/${params.account_id}`)
+  }
 }

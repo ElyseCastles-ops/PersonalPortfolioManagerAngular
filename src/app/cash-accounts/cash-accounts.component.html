@@ -1,7 +1,8 @@
 <section>
-  <h4>Cash (total)</h4>
+  <h4>Cash {{reportTotal | currency}}</h4>
   <ul>
     <li *ngFor="let account of reportAccounts">
+      <a routerLink="/cash-details" (click)="getAccountDetails(account.id)">Show Account Details</a>
       {{account.name}} {{account.balance | currency}}
       <br />
       {{account.description}}

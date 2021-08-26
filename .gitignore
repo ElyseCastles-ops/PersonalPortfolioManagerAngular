@@ -24,6 +24,8 @@ chrome-profiler-events*.json
 *.sublime-workspace
 
 # IDE - VSCode
+.vs/*
+.vs/slnx.sqlite
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json

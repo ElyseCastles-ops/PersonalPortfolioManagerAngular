@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-// import { PortfolioService } from '../../services/portfolio.service';
-import { PortfolioService } from '../shared/services/portfolio.service';
+import { PortfolioService } from '../../shared/services/portfolio.service';
 
 @Component({
   selector: 'app-cash-details',

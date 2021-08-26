@@ -11,7 +11,7 @@ import { MarketMoversComponent } from './market-movers/market-movers.component';
 import { InvestmentInsightsComponent } from './investment-insights/investment-insights.component';
 import { GainersLosersComponent } from './gainers-losers/gainers-losers.component';
 import { AccountInfoComponent } from './account-info/account-info.component';
-import { CashDetailsComponent } from './cash-details/cash-details.component';
+import { CashDetailsComponent } from './modules/cash-details/cash-details.component';
 import { InvestmentDetailsComponent } from './investment-details/investment-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CashTransactionComponent } from './cash-transaction/cash-transaction.component';

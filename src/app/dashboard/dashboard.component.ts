@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { PortfolioService } from '../shared/services/portfolio.service';
-import { CashDetailsComponent } from '../cash-details/cash-details.component';
+import { CashDetailsComponent } from '../modules/cash-details/cash-details.component';
 /*import { PortfolioService } from */
 
 @Component({

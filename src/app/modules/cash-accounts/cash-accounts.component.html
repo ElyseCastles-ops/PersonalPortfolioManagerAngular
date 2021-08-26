@@ -2,10 +2,13 @@
   <h4>Cash {{reportTotal | currency}}</h4>
   <ul>
     <li *ngFor="let account of reportAccounts">
-      <a routerLink="/cash-details" (click)="getAccountDetails(account.id)">Show Account Details</a>
-      {{account.name}} {{account.balance | currency}}
-      <br />
-      {{account.description}}
+      <a mat-list-item routerLinkActive="list-item-active"
+       routerLink="/cashdetails" (click)="getAccountDetails(account.id)">
+       {{account.name}} {{account.balance | currency}}
+       <br />
+       {{account.description}}
+      </a>
+
 
     </li>
   </ul>

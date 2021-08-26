@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccountInfoComponent } from './account-info/account-info.component';
-import { CashDetailsComponent } from './cash-details/cash-details.component';
+import { CashDetailsComponent } from './modules/cash-details/cash-details.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { GainersLosersComponent } from './gainers-losers/gainers-losers.component';
 import { InvestmentDetailsComponent } from './investment-details/investment-details.component';
@@ -19,7 +19,11 @@ const appRoutes: Routes = [{
   }, {
     path: 'posts',
     component: PostsComponent
-  }]
+  }, {
+  path: 'cashdetails',
+  component: CashDetailsComponent
+}
+]
 }];
 // { path: 'investment-details', component: InvestmentDetailsComponent },
 // { path: 'cash-details', component: CashDetailsComponent }

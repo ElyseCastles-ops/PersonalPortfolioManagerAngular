@@ -4,13 +4,22 @@
 
 <mat-divider></mat-divider>
 
-<div>
-    <div>Line Charts</div>
-    <div>Line Charts</div>
-    <div>Line Charts</div>
-    <div>Line Charts</div>
+<section>
+  <h3>Your Gainers:</h3>
+  <ul>
+    <li *ngFor="let gainer of (reportedGainers | slice:0:5 || []); let i=index" [hidden]="gainer.percentChange<0">
+      <span>{{gainer.ticker}} | {{gainer.percentChange}}%</span>
 
-</div>
+    </li>
+  </ul>
+  <h3>Your Losers:</h3>
+  <ul>
+    <li *ngFor="let gainer of (reportedGainers | slice:0:5 || []); let i=index">
+      <!--<span>{{gainer.ticker}} | {{gainer.percentChange}}%</span>-->
+
+    </li>
+  </ul>
+</section>
 
 <mat-divider></mat-divider>
 

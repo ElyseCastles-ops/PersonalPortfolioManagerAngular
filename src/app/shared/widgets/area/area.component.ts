@@ -21,13 +21,13 @@ export class AreaComponent implements OnInit {
                 text: 'User Accounts For Year 2021'
             },
 
-            subtitle: {
+            /*subtitle: {
                 text: 'Source: thesolarfoundation.com'
-            },
+            },*/
 
             yAxis: {
                 title: {
-                    text: 'Number of Employees'
+                    text: 'Networth in USD'
                 }
             },
 

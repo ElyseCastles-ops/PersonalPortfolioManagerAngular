@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PortfolioService } from '../../services/portfolio.service';
+import { PortfolioService } from '../shared/services/portfolio.service';
 
 @Component({
   selector: 'app-investment-details',
@@ -14,7 +14,7 @@ export class InvestmentDetailsComponent implements OnInit {
   reportedHoldings = [{ id: 8, account_id: 8, ticker: '', quantity: 8}]
   
 
-  constructor(private PortfolioService: PortfolioService) { }
+  constructor(private portfolioService: PortfolioService) { }
 
   
 
@@ -26,10 +26,10 @@ export class InvestmentDetailsComponent implements OnInit {
   }
 
   updateDisplayId() {
-    this.PortfolioService.getAccountTransactions({ category: 'investmenttransactions', account_id: this.displayId }).subscribe((data: any) => {
+    this.portfolioService.getAccountTransactions({ category: 'investmenttransactions', account_id: this.displayId }).subscribe((data: any) => {
       this.reportedTransactions = data;
     })
-    this.PortfolioService.getAccountHoldings({ account_id: this.displayId }).subscribe((data: any) => {
+    this.portfolioService.getAccountHoldings({ account_id: this.displayId }).subscribe((data: any) => {
       this.reportedHoldings = data;
     })
   }

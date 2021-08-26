@@ -14,6 +14,8 @@ import { RouterModule } from '@angular/router';
 import { WidgetsComponent } from './widgets/widgets.component';
 import { AreaComponent } from './widgets/area/area.component';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { PortfolioService } from './services/portfolio.service';
+import { CashAccountsComponent } from '../modules/cash-accounts/cash-accounts.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
     FooterComponent,
     SidebarComponent,
     WidgetsComponent,
-    AreaComponent
+    AreaComponent,
+    CashAccountsComponent
   ],
   imports: [
     CommonModule,
@@ -33,14 +36,24 @@ import { HighchartsChartModule } from 'highcharts-angular';
     MatMenuModule,
     MatListModule,
     RouterModule,
-    HighchartsChartModule
-
+    HighchartsChartModule,
+  ],
+  providers: [
+    PortfolioService
+  ],
+  bootstrap: [
+    HeaderComponent,
+    FooterComponent,
+    SidebarComponent,
+    AreaComponent
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    AreaComponent
+    AreaComponent,
+    
+
   ]
 })
 export class SharedModule { }

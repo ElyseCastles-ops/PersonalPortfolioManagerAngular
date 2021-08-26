@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PortfolioService } from '../../services/portfolio.service';
+// import { PortfolioService } from '../../services/portfolio.service';
+import { PortfolioService } from '../shared/services/portfolio.service';
 
 @Component({
   selector: 'app-cash-details',
@@ -12,7 +13,7 @@ export class CashDetailsComponent implements OnInit {
 
   reportedTransactions = [{ id: 8, account_id: 8, name: '', amount: 8, date: '' }];
 
-  constructor(private PortfolioService: PortfolioService) { }
+  constructor(private portfolioService: PortfolioService) { }
 
   ngOnInit(): void {
   }
@@ -22,7 +23,7 @@ export class CashDetailsComponent implements OnInit {
   }
 
   updateDisplayId() {
-    this.PortfolioService.getAccountTransactions({ category: 'cashtransactions', account_id: this.displayId }).subscribe((data:any) => {
+    this.portfolioService.getAccountTransactions({ category: 'cashtransactions', account_id: this.displayId }).subscribe((data:any) => {
       this.reportedTransactions = data;
     })
   }

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { PortfolioService } from '../../services/portfolio.service';
+import { PortfolioService } from '../shared/services/portfolio.service';
+// import { PortfolioService } from '../shared/services/portfolio.service';
 
 @Component({
   selector: 'app-investment-accounts',
@@ -17,7 +18,7 @@ export class InvestmentAccountsComponent implements OnInit {
   @Output() getInvestmentAccount: EventEmitter<number> = new EventEmitter();
   @Output() getDetails: EventEmitter<number> = new EventEmitter();
 
-  constructor(private PortfolioService: PortfolioService) { }
+  constructor(private portfolioService:PortfolioService ) { }
 
   ngOnInit(): void {
     this.makeTotalValueServiceCall();
@@ -25,13 +26,13 @@ export class InvestmentAccountsComponent implements OnInit {
   }
 
   makeTotalValueServiceCall() {
-    this.PortfolioService.getTotalInvestmentAccountsValue().subscribe((data:any) => {
+    this.portfolioService.getTotalInvestmentAccountsValue().subscribe((data:any) => {
       this.reportTotal = data
     })
   }
 
   makeAllAccountsServiceCall() {
-    this.PortfolioService.getAllInvestmentAccounts().subscribe((data: any) => {
+    this.portfolioService.getAllInvestmentAccounts().subscribe((data: any) => {
       this.reportAccounts = data;
     })
   }

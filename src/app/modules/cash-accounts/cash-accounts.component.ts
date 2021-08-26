@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { PortfolioService } from '../../services/portfolio.service';
+import { PortfolioService } from 'src/app/shared/services/portfolio.service';
 
 @Component({
   selector: 'app-cash-accounts',

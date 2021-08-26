@@ -15,7 +15,8 @@ import { AccountInfoComponent } from './account-info/account-info.component';
 import { CashDetailsComponent } from './cash-details/cash-details.component';
 import { InvestmentDetailsComponent } from './investment-details/investment-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
+import { DefaultModule } from './layouts/default/default.module';
+
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { MatButtonModule } from '@angular/material/button';
     GainersLosersComponent,
     AccountInfoComponent,
     CashDetailsComponent,
-    InvestmentDetailsComponent
+    InvestmentDetailsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,7 @@ import { MatButtonModule } from '@angular/material/button';
     FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    DefaultModule
 
   ],
   providers: [],

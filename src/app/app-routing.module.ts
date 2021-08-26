@@ -20,11 +20,15 @@ const appRoutes: Routes = [{
     path: 'posts',
     component: PostsComponent
   }, {
-  path: 'cashdetails',
+  path: 'cashdetails/:id',
   component: CashDetailsComponent
 }
 ]
-}];
+}, {
+  path: '**',
+  component: DefaultComponent
+}
+];
 // { path: 'investment-details', component: InvestmentDetailsComponent },
 // { path: 'cash-details', component: CashDetailsComponent }
 /*{ path: '', redirectTo: '/heroes', pathMatch: 'full' },

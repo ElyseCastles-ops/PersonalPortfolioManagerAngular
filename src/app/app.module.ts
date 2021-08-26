@@ -14,6 +14,8 @@ import { GainersLosersComponent } from './gainers-losers/gainers-losers.componen
 import { AccountInfoComponent } from './account-info/account-info.component';
 import { CashDetailsComponent } from './cash-details/cash-details.component';
 import { InvestmentDetailsComponent } from './investment-details/investment-details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DefaultModule } from './layouts/default/default.module';
 import { CashTransactionComponent } from './cash-transaction/cash-transaction.component';
 
 @NgModule({
@@ -35,7 +37,10 @@ import { CashTransactionComponent } from './cash-transaction/cash-transaction.co
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    DefaultModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

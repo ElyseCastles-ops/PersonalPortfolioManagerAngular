@@ -38,7 +38,7 @@ export class PortfolioService {
   
   getGainersAndLosers() {
     return this.http.get(`http://personalportfoliomanager-personalportfoliomanager.namdevops17.conygre.com/holdings/gainerslosers`)
-
+  }
   getAccount(params = { id: 1 }) {
     return this.http.get(`http://personalportfoliomanager-personalportfoliomanager.namdevops17.conygre.com/accounts/${params.id}`)
 

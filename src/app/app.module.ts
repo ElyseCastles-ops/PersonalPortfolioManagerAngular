@@ -16,8 +16,7 @@ import { CashDetailsComponent } from './cash-details/cash-details.component';
 import { InvestmentDetailsComponent } from './investment-details/investment-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultModule } from './layouts/default/default.module';
-
-
+import { CashTransactionComponent } from './cash-transaction/cash-transaction.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +31,7 @@ import { DefaultModule } from './layouts/default/default.module';
     AccountInfoComponent,
     CashDetailsComponent,
     InvestmentDetailsComponent,
-
+    CashTransactionComponent
   ],
   imports: [
     BrowserModule,

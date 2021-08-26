@@ -1,1 +1,21 @@
-<p>investment-details works!</p>
+<section>
+  <h3>Transactions for Account#{{displayId}}</h3>
+  <ul *ngIf="reportedTransactions!=[]">
+    <li *ngFor="let transaction of reportedTransactions">
+      <!--<app-cash-transaction></app-cash-transaction>-->
+      {{transaction.ticker}}
+      {{transaction.quantity}}
+      {{transaction.priceper | currency}}
+
+    </li>
+  </ul>
+</section>
+<section>
+  <h3>Holdings for Accountn#{{displayId}}</h3>
+  <ul>
+    <li *ngFor="let holding of reportedHoldings">
+      {{holding.ticker}}
+      {{holding.quantity}}
+    </li>
+  </ul>
+</section>

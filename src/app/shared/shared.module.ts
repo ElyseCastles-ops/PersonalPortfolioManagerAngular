@@ -16,6 +16,7 @@ import { AreaComponent } from './widgets/area/area.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { PortfolioService } from './services/portfolio.service';
 import { CashAccountsComponent } from '../modules/cash-accounts/cash-accounts.component';
+import { InvestmentAccountsComponent } from '../modules/investment-accounts/investment-accounts.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CashAccountsComponent } from '../modules/cash-accounts/cash-accounts.co
     SidebarComponent,
     WidgetsComponent,
     AreaComponent,
-    CashAccountsComponent
+    CashAccountsComponent,
+    InvestmentAccountsComponent
   ],
   imports: [
     CommonModule,

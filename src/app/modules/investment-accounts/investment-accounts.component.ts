@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { PortfolioService } from '../shared/services/portfolio.service';
+import { PortfolioService } from '../../shared/services/portfolio.service';
 // import { PortfolioService } from '../shared/services/portfolio.service';
 
 @Component({

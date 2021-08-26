@@ -13,14 +13,19 @@
 
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/">Dashboard</a>
     <!-- <a mat-list-item >Cash Accounts</a> -->
-
+    <a mat-list-item>Cash {{reportCashTotal | currency}}</a>
     <app-cash-accounts
     (getDetails)="handleGetAccountDetails($event)"
     (getCashAccount)="handleShowCashAccountDetals()"
   >
   </app-cash-accounts>
 
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/invesmentaccounts">Investment Accounts</a>
+    <a mat-list-item>Investment Accounts {{reportInvestmentTotal | currency}}</a>
+
+    <app-investment-accounts
+      (getDetails)="handleGetAccountDetails($event)"
+      (getInvestmentAccount)="handleShowInvestmentAcountDetails()">
+    </app-investment-accounts>
 
     <mat-divider></mat-divider>
 

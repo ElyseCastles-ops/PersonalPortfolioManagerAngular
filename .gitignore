@@ -18,11 +18,14 @@ chrome-profiler-events*.json
 .project
 .classpath
 .c9/
+/.vs
 *.launch
 .settings/
 *.sublime-workspace
 
 # IDE - VSCode
+.vs/*
+.vs/slnx.sqlite
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json

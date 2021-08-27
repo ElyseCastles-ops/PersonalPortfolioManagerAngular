@@ -1,0 +1,28 @@
+<div>
+    <app-widget-area></app-widget-area>
+  <br />
+</div>
+
+<mat-divider></mat-divider>
+
+<section>
+  <br />
+  <h3>Your Gainers:</h3>
+  <ul>
+    <li *ngFor="let gainer of (reportedGainers | slice:0:5 || []); let i=index" [hidden]="gainer.percentChange<0">
+      <span>Entity: {{gainer.ticker}} | {{gainer.percentChange}}%</span>
+
+    </li>
+  </ul>
+  <h3>Your Losers:</h3>
+  <ul>
+    <li *ngFor="let gainer of (reportedGainers.slice().reverse().slice(0,5).reverse() || []); let i=index" [hidden]="gainer.percentChange>=0">
+      <span>Entity: {{gainer.ticker}} | {{gainer.percentChange}}%</span>
+
+    </li>
+  </ul>
+  <br />
+</section>
+
+<mat-divider></mat-divider>
+

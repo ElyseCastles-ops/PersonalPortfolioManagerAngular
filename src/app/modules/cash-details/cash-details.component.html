@@ -1,0 +1,13 @@
+<section>
+  <h2>{{reportedAccount.name}} -- {{reportedAccount.description}}</h2>
+
+  <ul *ngIf="reportedTransactions!=[]">
+    <li *ngFor="let transaction of reportedTransactions | reverse">
+      <p>
+        {{transaction.date | date }} |
+        {{transaction.name}} |
+        {{transaction.amount | currency}}
+      </p>
+    </li>
+  </ul>
+</section>

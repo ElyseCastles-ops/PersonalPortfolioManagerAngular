@@ -4,7 +4,7 @@
     <li *ngFor="let account of reportAccounts">
       <a mat-list-item routerLinkActive="list-item-active"
        routerLink="/cashdetails/{{account.id}}" (click)="getAccountDetails(account.id)">
-       {{account.name}} {{account.balance | currency}}
+       {{account.name}} | {{account.balance | currency}}
        <br />
        {{account.description}}
       </a>

@@ -1,5 +1,15 @@
 <section>
   <h2>{{reportedAccount.name}} -- {{reportedAccount.description}}</h2>
+  <h3>Current Holdings:</h3>
+  <ul>
+    <li *ngFor="let holding of reportedHoldings">
+      <p>
+        Entity: {{holding.ticker}} | Quantity: {{holding.quantity}}
+      </p>
+    </li>
+  </ul>
+</section>
+<section>
   <h3>Account Activity:</h3>
   <ul *ngIf="reportedTransactions!=[]">
     <li *ngFor="let transaction of reportedTransactions">
@@ -9,16 +19,6 @@
         <span [hidden]="transaction.quantity<0">{{transaction.quantity}} (Buy) |</span>
         <span [hidden]="transaction.quantity>0">{{transaction.quantity}} (Sell) |</span>
         {{transaction.priceper | currency}}
-      </p>
-    </li>
-  </ul>
-</section>
-<section>
-  <h3>Current Holdings:</h3>
-  <ul>
-    <li *ngFor="let holding of reportedHoldings">
-      <p>
-        Entity: {{holding.ticker}} | Quantity: {{holding.quantity}}
       </p>
     </li>
   </ul>
